@@ -53,7 +53,7 @@ export default function NavItems({ className }: { className?: string }) {
                 <AvatarImage src="/avatar.jpeg" alt="@shadcn" />
                 <AvatarFallback>{user?.name?.slice(0, 1)}</AvatarFallback>
               </Avatar>
-              Guest Area
+              {user?.name}
             </Link>
           ) : (
             <Link href="/login" className={cn(`hover:text-primary transition-all`)}>
