@@ -55,8 +55,8 @@ export function AppSidebar() {
       </button>
       <SidebarHeader className="bg-background text-foreground flex  p-4 border-b border-white/20">
         <Link href="/" className="flex  items-center gap-2">
-          <Image src="/logo.png" width={60} height={60} alt="The Grand Castle" />
-          <span>The Grand Castle</span>
+          <Image src="/logo.png" width={60} height={60} alt="The Wilder Lodge" />
+          <span>The Wilder Lodge</span>
         </Link>
       </SidebarHeader>
       <SidebarContent className="bg-background text-foreground pt-5">

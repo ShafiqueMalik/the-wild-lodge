@@ -13,10 +13,10 @@ const josefin_Sans = Josefin_Sans({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: {
-    template: '%s - The Grand Castle',
-    default: 'The Grand Castle',
+    template: '%s - The Wilder Lodge',
+    default: 'The Wilder Lodge',
   },
-  description: 'A The Grand Castle application built with Next.js, React, and Tailwind CSS.',
+  description: 'A The Wilder Lodge application built with Next.js, React, and Tailwind CSS.',
 };
 
 export default async function RootLayout({
