@@ -3,9 +3,11 @@ import Link from 'next/link';
 import { User, Home, Calendar, LogOutIcon } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
+import { signOut } from 'next-auth/react';
 
 function AccountSidebar() {
   const pathname = usePathname();
+
   return (
     <nav className="flex flex-col gap-2  border-r border-white/20 px-4 text-paragraph">
       <Link
@@ -39,8 +41,9 @@ function AccountSidebar() {
         <span>Guest profile</span>
       </Link>
       <Link
-        href="/"
+        href="#"
         className="flex items-center mt-auto gap-2 py-2 px-3 rounded hover:bg-destructive/50 transition"
+        onClick={() => signOut({ callbackUrl: '/login' })}
       >
         <LogOutIcon className="w-5 h-5" />
         <span>Signout</span>

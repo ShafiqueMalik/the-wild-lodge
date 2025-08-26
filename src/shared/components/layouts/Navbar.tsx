@@ -6,6 +6,7 @@ import NavItems from './NavItems';
 import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 import { useSidebar } from '@/components/ui/sidebar';
+import { useSession } from 'next-auth/react';
 
 export default function Navbar() {
   const pathname = usePathname();

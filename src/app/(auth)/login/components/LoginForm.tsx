@@ -6,6 +6,8 @@ import FormWrapper from '@/shared/components/forms/FormWrapper';
 import { AppButton } from '@/shared/components/forms/AppButton';
 import InputField from '@/shared/components/forms/InputField';
 import PageTitle from '@/shared/components/typography/PageTitle';
+import { signIn } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
 
 const schema = z.object({
   email: z.string().email('Please enter a valid email'),
@@ -13,6 +15,8 @@ const schema = z.object({
 });
 
 export default function LoginForm() {
+  const router = useRouter();
+
   const form = useForm({
     resolver: zodResolver(schema),
     defaultValues: {
@@ -21,8 +25,27 @@ export default function LoginForm() {
     },
   });
 
-  const onSubmit = (values: any) => {
+  const onSubmit = async (values: any) => {
     console.log('Login:', values);
+    try {
+      const res = await signIn('credentials', {
+        email: values.email,
+        password: values.password,
+        // redirect: true,
+        redirect: false,
+        callbackUrl: '/', // where to go after login
+      });
+      console.log('SignIn response:', res);
+      if (res?.error) {
+        // Show proper error message
+        console.error('Login failed:', res.error);
+      } else {
+        // Redirect manually
+        router.push(res?.url || '/');
+      }
+    } catch (error) {
+      console.error('Error during sign-in:', error);
+    }
   };
 
   return (

@@ -2,11 +2,14 @@
 
 import { SidebarProvider } from '@/components/ui/sidebar';
 import { ThemeProvider } from 'next-themes';
+import { SessionProvider } from 'next-auth/react';
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
     <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-      <SidebarProvider defaultOpen={false}>{children}</SidebarProvider>
+      <SessionProvider>
+        <SidebarProvider defaultOpen={false}>{children}</SidebarProvider>
+      </SessionProvider>
     </ThemeProvider>
   );
 }
