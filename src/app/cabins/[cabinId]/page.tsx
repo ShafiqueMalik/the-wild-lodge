@@ -9,6 +9,9 @@ export async function generateStaticParams() {
   return cabinIds.map((id) => ({ cabinId: id }));
 }
 
+export const metadata = {
+  title: 'Cabin Details',
+};
 export default async function CabinDetailsPage({
   params,
 }: {

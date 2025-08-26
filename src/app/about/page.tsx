@@ -2,6 +2,9 @@ import PageTitle from '@/shared/components/typography/PageTitle';
 import Image from 'next/image';
 import React from 'react';
 
+export const metadata = {
+  title: 'About Us',
+};
 export default function AboutPage() {
   return (
     <div className="space-y-12 sm:space-y-[100px]">

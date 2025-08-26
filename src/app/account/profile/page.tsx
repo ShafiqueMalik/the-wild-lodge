@@ -1,7 +1,11 @@
 import PageTitle from '@/shared/components/typography/PageTitle';
 import React from 'react';
 import ProfileForm from './components/ProfileForm';
+import { Metadata } from 'next';
 
+export const metadata: Metadata = {
+  title: 'Update Profile',
+};
 export default function ProfilePage() {
   return (
     <div>

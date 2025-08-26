@@ -6,6 +6,8 @@ import { Providers } from '@/providers';
 
 import { Josefin_Sans } from 'next/font/google';
 import Navbar from '@/shared/components/layouts/Navbar';
+import NavigationBar from '@/shared/components/layouts/NavigationBar';
+import { AppSidebar } from '@/shared/components/layouts/AppSidebar';
 
 const josefin_Sans = Josefin_Sans({ subsets: ['latin'] });
 
@@ -26,8 +28,10 @@ export default async function RootLayout({
     <html lang="en" className="overflow-x-hidden scroll-smooth  " suppressHydrationWarning>
       <body className={josefin_Sans.className + ' antialiased  '}>
         <Providers>
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-5xl w-full mx-auto px-4 sm:px-6 lg:px-8">
             <Navbar />
+            <AppSidebar />
+            {/* <NavigationBar /> */}
             <main className="flex flex-col min-h-[calc(100vh-92px)] py-10 ">{children}</main>
             <ToastContainer position="bottom-right" />
           </div>

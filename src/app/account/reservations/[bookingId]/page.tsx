@@ -6,15 +6,15 @@ export const metadata: Metadata = {
 };
 
 interface ReservationEditPageProps {
-  params: {
-    bookingId: string;
-  };
+  params: Promise<{ bookingId: string }>;
 }
 
-export default function ReservationEditPage({ params }: ReservationEditPageProps) {
+export default async function ReservationEditPage({ params }: ReservationEditPageProps) {
+  const { bookingId } = await params;
+  console.log('Booking ID:', bookingId);
   return (
     <div>
-      <h1 className="text-2xl font-bold mb-6">Change Reservation #{params.bookingId}</h1>
+      <h1 className="text-2xl font-bold mb-6">Change Reservation #{bookingId}</h1>
       {/* Render the ReservationForm but remove date fields */}
       <UpdateReservationForm />
     </div>

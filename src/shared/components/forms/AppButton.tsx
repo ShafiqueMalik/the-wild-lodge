@@ -13,6 +13,7 @@ export type AppButtonVariant =
   | 'linkSecondary'
   | 'destructive'
   | 'destructiveOutlined'
+  | 'ghostPrimary'
   | 'default';
 
 interface AppButtonProps {
@@ -33,6 +34,7 @@ const variantClasses: Record<AppButtonVariant, string> = {
   linkSecondary: 'text-secondary underline bg-transparent border-none p-0',
   destructive: 'bg-destructive text-white border-none',
   destructiveOutlined: 'border border-destructive text-destructive bg-transparent',
+  ghostPrimary: ' px-4 bg-transparent text-paragraph/70  hover:bg-primary hover:text-foreground',
   default: 'bg-secondary text-background border border-background',
 };
 

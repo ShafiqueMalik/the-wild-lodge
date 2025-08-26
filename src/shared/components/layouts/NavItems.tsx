@@ -4,11 +4,11 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React from 'react';
 
-export default function NavItems() {
+export default function NavItems({ className }: { className?: string }) {
   const pathname = usePathname();
 
   return (
-    <nav>
+    <nav className={cn(className)}>
       <ul className="flex items-center gap-6 lg:gap-12">
         <li>
           <Link

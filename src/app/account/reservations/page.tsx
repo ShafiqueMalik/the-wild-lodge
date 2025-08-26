@@ -2,7 +2,11 @@ import PageTitle from '@/shared/components/typography/PageTitle';
 import React from 'react';
 import ReservationCard from './components/ReservationCard';
 import NoReservationMessage from './components/NoReservationMessage';
+import { Metadata } from 'next';
 
+export const metadata: Metadata = {
+  title: 'Reservations',
+};
 export default function ReservationsPage() {
   return (
     <div>

@@ -3,9 +3,9 @@ import { redirect } from 'next/navigation';
 import React from 'react';
 
 export default function GuestLayout({ children }: { children: React.ReactNode }) {
-  if (true) {
-    redirect('/login');
-  }
+  // if (true) {
+  //   redirect('/login');
+  // }
   return (
     <div className="grid grid-cols-[230px_1fr] flex-1">
       <GuestSidebar />

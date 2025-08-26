@@ -21,7 +21,7 @@ export function CabinCard({ title, guests, price, originalPrice }: CabinCardProp
           <Image src="/about-1.jpg" fill alt={title} className="object-cover w-full " />
         </div>
         {/* Right: Content */}
-        <div className="w-2/3 flex flex-col py-4 bg-none">
+        <div className="w-2/3 flex flex-col pt-4 bg-none">
           <CardHeader className=" ">
             <h3 className="text-xl font-semibold text-primary">{title}</h3>
           </CardHeader>
@@ -43,9 +43,13 @@ export function CabinCard({ title, guests, price, originalPrice }: CabinCardProp
               </div>
             </div>
           </CardContent>
-          <CardFooter className="pt-0 justify-end px-4">
-            <AppButton variant="linkPrimary" href="/cabins/100" className="!px-0 text-sm">
-              Details & reservation <ArrowRight className="ml-2 h-4 w-4" />
+          <CardFooter className="!pt-0 justify-end px-0 border-t border-white/20">
+            <AppButton
+              variant="ghostPrimary"
+              href="/cabins/100"
+              className="text-sm justify-end flex-1 flex  gap-2 border- border-white/20"
+            >
+              Details & reservation <ArrowRight className="h-4 w-4" />
             </AppButton>
           </CardFooter>
         </div>

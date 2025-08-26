@@ -3,6 +3,9 @@ import PageTitle from '@/shared/components/typography/PageTitle';
 import React from 'react';
 import CabinsGrid from './components/CabinGrid';
 
+export const metadata = {
+  title: 'Cabins',
+};
 export default function CabinsPage() {
   return (
     <div>
