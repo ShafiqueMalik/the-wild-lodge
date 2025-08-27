@@ -34,6 +34,7 @@ function CabinsGrid() {
         <CabinCard
           key={cabin.id}
           title={`Cabin ${cabin.id}`}
+          id={cabin.id}
           guests={cabin.guests}
           price={cabin.price}
           originalPrice={cabin.originalPrice}

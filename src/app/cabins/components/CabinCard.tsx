@@ -5,13 +5,14 @@ import Image from 'next/image';
 import { AppButton } from '@/shared/components/forms/AppButton';
 
 interface CabinCardProps {
+  id: string;
   title: string;
   guests: number;
   price: number;
   originalPrice?: number;
 }
 
-export function CabinCard({ title, guests, price, originalPrice }: CabinCardProps) {
+export function CabinCard({ id, title, guests, price, originalPrice }: CabinCardProps) {
   return (
     <Card className="overflow-hidden max-w-[460px] shadow-sm rounded-none p-0 border-white/20 bg-transparent text-foreground">
       <div className="flex flex-row">
@@ -46,7 +47,7 @@ export function CabinCard({ title, guests, price, originalPrice }: CabinCardProp
           <CardFooter className="!pt-0 justify-end px-0 border-t border-white/20">
             <AppButton
               variant="ghostPrimary"
-              href="/cabins/100"
+              href={`/cabins/${id}`}
               className="text-sm justify-end flex-1 flex  gap-2 border- border-white/20"
             >
               Details & reservation <ArrowRight className="h-4 w-4" />
