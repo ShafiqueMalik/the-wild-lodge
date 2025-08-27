@@ -2,6 +2,7 @@ import React from 'react';
 import CabinDetailsCard from './components/CabinDetailsCard';
 import PageTitle from '@/shared/components/typography/PageTitle';
 import ReservationForm from './components/ReservationForm';
+import BackButton from '@/shared/components/buttons/BackButton';
 
 export async function generateStaticParams() {
   // Simulating fetching cabin IDs from a database or API
@@ -20,6 +21,7 @@ export default async function CabinDetailsPage({
   const { cabinId } = await params;
   return (
     <div>
+      <BackButton className="mb-5" />
       <CabinDetailsCard
         id={cabinId}
         title={'Cabin ' + cabinId}
