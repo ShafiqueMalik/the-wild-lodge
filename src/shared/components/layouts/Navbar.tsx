@@ -24,7 +24,13 @@ export default function Navbar() {
   return (
     <header className="flex justify-between h-[92px] items-center py-4 z-50">
       <Link href="/" className="flex  items-center gap-2">
-        <Image src="/logo.png" width={60} height={60} alt="The Wilder Lodge" />
+        <Image
+          src="/logo.png"
+          width={60}
+          height={60}
+          alt="The Wilder Lodge"
+          className="size-[45px] md:size-[60px]"
+        />
         <span>The Wilder Lodge</span>
       </Link>
       <NavItems className="hidden md:flex" />
