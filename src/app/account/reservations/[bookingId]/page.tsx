@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import UpdateReservationForm from './components/UpdateReservationForm';
+import BackButton from '@/shared/components/buttons/BackButton';
 
 // Same data as in reservations/page.tsx
 const reservations = [
@@ -40,6 +41,7 @@ export default async function ReservationEditPage({ params }: ReservationEditPag
   const reservation = reservations.find((r) => r.id.toString() === bookingId);
   return (
     <div>
+      <BackButton className="mb-5" />
       <h1 className="text-2xl font-bold mb-6">
         Change Reservation #{bookingId} {reservation ? `(${reservation.cabin})` : ''}
       </h1>
