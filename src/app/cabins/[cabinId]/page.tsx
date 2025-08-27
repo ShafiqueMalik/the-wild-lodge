@@ -3,6 +3,7 @@ import CabinDetailsCard from './components/CabinDetailsCard';
 import PageTitle from '@/shared/components/typography/PageTitle';
 import ReservationForm from './components/ReservationForm';
 import BackButton from '@/shared/components/buttons/BackButton';
+import { Metadata } from 'next';
 
 export async function generateStaticParams() {
   // Simulating fetching cabin IDs from a database or API
@@ -10,9 +11,18 @@ export async function generateStaticParams() {
   return cabinIds.map((id) => ({ cabinId: id }));
 }
 
-export const metadata = {
-  title: 'Cabin Details',
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ cabinId: string }>;
+}): Promise<Metadata> {
+  const { cabinId } = await params;
+  const cabinNumber = ['001', '002', '003', '004'].find((cid) => cid.toString() === cabinId);
+  return {
+    title: cabinNumber ? cabinNumber + ' Cabin' : 'Change Reservation',
+  };
+}
+
 export default async function CabinDetailsPage({
   params,
 }: {
