@@ -126,7 +126,7 @@ export default function ReservationsPage() {
   return (
     <div>
       <PageTitle className="text-xl">Your reservations</PageTitle>
-      <NoReservationMessage />
+      {/* <NoReservationMessage /> */}
       <div className="space-y-5 mt-5">
         {reservations.map((reservation) => (
           <ReservationCard key={reservation.id} {...reservation} />

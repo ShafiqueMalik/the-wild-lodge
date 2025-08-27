@@ -9,7 +9,7 @@ export default async function AccountPage() {
   return (
     <div>
       <PageTitle className="text-lg">
-        <UserName />
+        Welcome, <UserName />
       </PageTitle>
     </div>
   );

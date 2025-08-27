@@ -29,16 +29,16 @@ export default function ReservationCard({
   image,
 }: ReservationCardProps) {
   return (
-    <div className="flex items-center">
-      <div className="relative w-[150px] self-stretch">
-        <Image src={image} fill alt={cabin} />
+    <div className="flex flex-col md:flex-row md:items-center">
+      <div className="relative w-full  md:w-[150px] h-[150px] md:h-auto self-stretch">
+        <Image src={image} fill alt={cabin} className="object-cover" />
       </div>
-      <div className="border border-l-0 relative border-white/20 px-5 py-3 flex-1">
+      <div className="border border-l md:border-l-0 relative border-white/20 px-5 py-5 md:py-3 flex-1">
         <h2>
           {nights} Night{nights > 1 ? 's' : ''} in {cabin}
         </h2>
         <p className="text-paragraph/70 mb-3 text-sm">{dateRange}</p>
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between">
           <div className="flex items-center gap-2 font-semibold">
             <span className="text-primary">${price}</span>
             <span>.</span>
@@ -59,14 +59,14 @@ export default function ReservationCard({
       </div>
 
       {/* Actions */}
-      <div className="flex flex-col  self-stretch border-l-0 border border-white/20">
+      <div className="flex flex-row items-center md:flex-col  self-stretch border-l md:border-l-0 border border-white/20">
         <AppButton
           href={`/account/reservations/${id}`}
-          className="flex-1 px-4 bg-transparent text-paragraph/70 border-b border-white/20  hover:bg-primary hover:text-foreground"
+          className="flex-1 px-4 bg-transparent text-paragraph/70  border-b border-white/20  hover:bg-primary hover:text-foreground"
         >
           <Edit2Icon size={16} /> Edit
         </AppButton>
-        <AppButton className="flex-1 px-4 bg-transparent text-paragraph/70  hover:bg-primary hover:text-foreground">
+        <AppButton className="flex-1 px-4 bg-transparent text-paragraph/70   hover:bg-primary hover:text-foreground">
           <Trash size={14} /> Delete
         </AppButton>
       </div>
