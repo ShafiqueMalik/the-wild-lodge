@@ -5,7 +5,7 @@ import ReservationForm from './components/ReservationForm';
 
 export async function generateStaticParams() {
   // Simulating fetching cabin IDs from a database or API
-  const cabinIds = ['001', '002', '003']; // Example cabin IDs
+  const cabinIds = ['001', '002', '003', '004']; // Example cabin IDs
   return cabinIds.map((id) => ({ cabinId: id }));
 }
 

@@ -5,34 +5,63 @@ import { Edit2Icon, Trash } from 'lucide-react';
 import Image from 'next/image';
 import React from 'react';
 
-export default function ReservationCard() {
+type ReservationCardProps = {
+  id: number;
+  nights: number;
+  cabin: string;
+  dateRange: string;
+  price: number;
+  guests: number;
+  booked: string;
+  badge: string;
+  image: string;
+};
+
+export default function ReservationCard({
+  id,
+  nights,
+  cabin,
+  dateRange,
+  price,
+  guests,
+  booked,
+  badge,
+  image,
+}: ReservationCardProps) {
   return (
     <div className="flex items-center">
       <div className="relative w-[150px] self-stretch">
-        <Image src="/about-1.jpg" fill alt="about " />
+        <Image src={image} fill alt={cabin} />
       </div>
       <div className="border border-l-0 relative border-white/20 px-5 py-3 flex-1">
-        <h2>7 Night in Cabin 001</h2>
-        <p className="text-paragraph/70 mb-3 text-sm">
-          Wed, Feb 14 2025(3 months ago) - Sat, Dec 21 2025
-        </p>
+        <h2>
+          {nights} Night{nights > 1 ? 's' : ''} in {cabin}
+        </h2>
+        <p className="text-paragraph/70 mb-3 text-sm">{dateRange}</p>
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2 font-semibold">
-            <span className="text-primary">$2100</span>
+            <span className="text-primary">${price}</span>
             <span>.</span>
-            <span>4 Guests</span>
+            <span>
+              {guests} Guest{guests > 1 ? 's' : ''}
+            </span>
           </div>
-          <div className="text-paragraph/70 text-sm">Booked Fri, Jan 05 2025, 11:30pm</div>
+          <div className="text-paragraph/70 text-sm">Booked {booked}</div>
         </div>
-        <AppBadge variant="success" className="absolute right-3 top-2">
-          Badge
+        <AppBadge
+          variant={
+            badge === 'Confirmed' ? 'success' : badge === 'Pending' ? 'warning' : 'destructive'
+          }
+          className="absolute right-3 top-2"
+        >
+          {badge}
         </AppBadge>
       </div>
 
       {/* Actions */}
       <div className="flex flex-col  self-stretch border-l-0 border border-white/20">
         <AppButton
-          href="/account/reservations/100"
+          href={`/account/reservations/${id}`}
           className="flex-1 px-4 bg-transparent text-paragraph/70 border-b border-white/20  hover:bg-primary hover:text-foreground"
         >
           <Edit2Icon size={16} /> Edit

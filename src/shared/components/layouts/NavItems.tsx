@@ -9,7 +9,6 @@ import React from 'react';
 export default function NavItems({ className }: { className?: string }) {
   const pathname = usePathname();
   const session = useSession();
-  console.log('Session in Navbar:', session);
   const user = session?.data?.user;
 
   return (
@@ -37,6 +36,7 @@ export default function NavItems({ className }: { className?: string }) {
             About
           </Link>
         </li>
+
         <li>
           {user ? (
             <Link
