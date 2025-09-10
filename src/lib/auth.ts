@@ -13,7 +13,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       async authorize(credentials) {
         // ✅ Dummy login logic
         if (credentials?.email === 'demo@demo.com' && credentials?.password === 'demo123') {
-          return { id: '1', name: 'Demo User', email: 'demo@example.com' };
+          return { id: '1', name: 'John Doe', email: 'john.doe@wild-lodge.com' };
         }
         return null;
       },
